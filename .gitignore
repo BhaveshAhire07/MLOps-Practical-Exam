@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+mlruns/
+mlartifacts/
+.feature_store/
+data/registry.db
+data/online_store.db
+.dvc/cache/
+.DS_Store
