@@ -1,0 +1,30 @@
+schema: '2.0'
+stages:
+  build_features:
+    cmd: python src/pipeline/build_features.py
+    deps:
+    - path: data/raw/digits.csv
+      hash: md5
+      md5: 4dbaaf85f5ab7f62f8e54af152bcf36e
+      size: 504982
+    - path: src/pipeline/build_features.py
+      hash: md5
+      md5: ee7d518f36e7b691c4dc5fdc672d1dbf
+      size: 2040
+    params:
+      params.yaml:
+        data.input_path: data/raw/digits.csv
+        data.output_dir: data/processed
+        features.id_column: digit_id
+        features.target_column: label
+        split.random_state: 42
+        split.test_size: 0.2
+    outs:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 7a949a976522919fc8f7fed9e9133e3f
+      size: 100009
+    - path: data/processed/train.csv
+      hash: md5
+      md5: cfa3716d8ca817f3183f41915a61018b
+      size: 397662

@@ -1,0 +1,12 @@
+
+split:
+  test_size: 0.2
+  random_state: 42
+
+data:
+  input_path: data/raw/digits.csv
+  output_dir: data/processed
+
+features:
+  target_column: label
+  id_column: digit_id

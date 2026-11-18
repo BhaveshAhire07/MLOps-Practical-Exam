@@ -1,0 +1,17 @@
+
+stages:
+  build_features:
+    cmd: python src/pipeline/build_features.py
+    deps:
+      - src/pipeline/build_features.py
+      - data/raw/digits.csv
+    params:
+      - split.test_size
+      - split.random_state
+      - data.input_path
+      - data.output_dir
+      - features.target_column
+      - features.id_column
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
